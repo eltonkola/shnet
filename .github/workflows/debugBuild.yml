@@ -1,0 +1,31 @@
+# This action will build and upload a debug build in github, and
+name: Build debug apk
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+      
+      - name: Build debug APK
+        run: bash ./gradlew assembleDebug --stacktrace
+      
+      - name: Upload APK as an artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: app/build/outputs/apk/debug/app-debug.apk
+      
+      - name: Upload to slack
+        uses: MeilCli/slack-upload-file@v1
+        with:
+          slack_token: ${{ secrets.SLACK_BOT_TOKEN }}
+          channels: android_git_activity
+          file_path: 'app/build/outputs/apk/debug/app-debug.apk'
+          file_name: 'app-debug.apk'
+          file_type: 'apk'
+          initial_comment: 'This is the latest debug build on main branch'
