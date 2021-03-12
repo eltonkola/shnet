@@ -50,7 +50,7 @@ class DataRepo(private val context: Context) {
 
     fun defaultTemplate(): UserData {
         return UserData(
-            workouts = (1..14).map { WorkoutStep(title = "Workout $it") },
+            workouts = (1..10).map { WorkoutStep(title = "Workout $it") },
             drinks = listOf(
                 DailyDrink(title = "Coffee", icon = R.drawable.ic_coffee, sizeMl = 350),
                 DailyDrink(title = "Watter 1", icon = R.drawable.ic_bottle_water, sizeMl = 750),
@@ -66,7 +66,7 @@ class DataRepo(private val context: Context) {
                     sizeMl = 850
                 ),
             ),
-            dailyRun = DailyRun(title = "Daily run x", length = 5)
+            dailyRun = DailyRun(title = "Daily run 5 km", length = 5)
         )
     }
 

@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.eltonkola.shnet.MainViewModel
 import com.eltonkola.shnet.R
 import com.eltonkola.shnet.ui.theme.ShnetTheme
+import com.eltonkola.shnet.ui.views.StreakView
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
@@ -33,6 +34,10 @@ fun ShnetAppView(model: MainViewModel) {
     val formattedDate = formatter.format(Date())
     val scaffoldState = rememberBottomSheetScaffoldState()
     val coroutineScope = rememberCoroutineScope()
+
+  //  streaks
+
+
     BottomSheetScaffold(
         topBar = {
             TopAppBar(title = {
@@ -40,17 +45,10 @@ fun ShnetAppView(model: MainViewModel) {
                     modifier = Modifier.padding(start = 8.dp, end = 8.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_fire),
-                        contentDescription = "streak",
-                        tint = if(model.streaks > 0) Color.Red else Color.LightGray
-                        )
-                        Text(
-                            text = "${model.streaks}",
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold,
-                            modifier = Modifier.padding(start = 2.dp)
-                        )
+                    StreakView(
+                        modifier = Modifier,
+                        model.streaks
+                    )
                     Text(
                         text = formattedDate,
                         textAlign = TextAlign.Center,

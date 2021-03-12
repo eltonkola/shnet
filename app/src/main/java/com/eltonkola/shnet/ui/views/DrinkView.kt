@@ -1,4 +1,4 @@
-package com.eltonkola.shnet.ui
+package com.eltonkola.shnet.ui.views
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -21,8 +21,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.eltonkola.shnet.DailyDrink
-import com.eltonkola.shnet.R
+import com.eltonkola.shnet.R.drawable
+import com.eltonkola.shnet.ui.selectedBackgroundColor
+import com.eltonkola.shnet.ui.selectedTextColor
 import com.eltonkola.shnet.ui.theme.ShnetTheme
+import com.eltonkola.shnet.ui.unselectedBackgroundColor
+import com.eltonkola.shnet.ui.unselectedTextColor
 
 
 @ExperimentalFoundationApi
@@ -72,6 +76,6 @@ fun DrinkView(drink: DailyDrink, delete: Boolean = false, onclick:(DailyDrink) -
 @Composable
 fun DrinkViewPreview() {
     ShnetTheme() {
-        DrinkView(DailyDrink(title = "Coffee", icon = R.drawable.ic_coffee, sizeMl = 250), false, {})
+        DrinkView(DailyDrink(title = "Coffee", icon = drawable.ic_coffee, sizeMl = 250), false, {})
     }
 }

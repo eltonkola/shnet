@@ -1,4 +1,4 @@
-package com.eltonkola.shnet.ui
+package com.eltonkola.shnet.ui.views
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -16,7 +16,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.eltonkola.shnet.WorkoutStep
+import com.eltonkola.shnet.ui.selectedBackgroundColor
+import com.eltonkola.shnet.ui.selectedTextColor
 import com.eltonkola.shnet.ui.theme.ShnetTheme
+import com.eltonkola.shnet.ui.unselectedBackgroundColor
+import com.eltonkola.shnet.ui.unselectedTextColor
 
 
 @ExperimentalFoundationApi

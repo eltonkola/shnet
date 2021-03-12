@@ -70,6 +70,23 @@ class MainViewModel(private val repo: DataRepo) : ViewModel() {
 
     private fun save(){
         repo.saveData(UserData(dailyRun = dailyRun, drinks = dailyDrinks, workouts = workoutSteps))
+
+        var dirnksDone =  true
+        dailyDrinks.forEach {
+            if(!it.done) dirnksDone = false
+        }
+
+        var workoutStepsDone =  true
+        workoutSteps.forEach {
+            if(!it.done) workoutStepsDone = false
+        }
+
+        if(dailyRun.done && dirnksDone && workoutStepsDone){
+            repo.saveStreak(streaks + 1 )
+            streaks = repo.loadStreak()
+        }
+
+
     }
 
     fun reset() {

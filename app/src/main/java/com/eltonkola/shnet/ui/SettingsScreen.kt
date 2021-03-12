@@ -6,10 +6,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.Email
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,8 +23,8 @@ import androidx.compose.ui.unit.sp
 import com.eltonkola.shnet.MainViewModel
 import com.eltonkola.shnet.R
 import com.eltonkola.shnet.ui.theme.ShnetTheme
-import com.google.android.material.button.MaterialButtonToggleGroup
-import java.util.*
+import com.eltonkola.shnet.ui.views.DrinkView
+import com.eltonkola.shnet.ui.views.SeparatorText
 
 
 @OptIn(ExperimentalMaterialApi::class)

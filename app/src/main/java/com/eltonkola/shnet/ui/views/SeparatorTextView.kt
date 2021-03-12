@@ -1,4 +1,4 @@
-package com.eltonkola.shnet.ui
+package com.eltonkola.shnet.ui.views
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.Text

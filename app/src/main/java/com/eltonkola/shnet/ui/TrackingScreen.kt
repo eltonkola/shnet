@@ -11,6 +11,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.eltonkola.shnet.MainViewModel
 import com.eltonkola.shnet.ui.theme.ShnetTheme
+import com.eltonkola.shnet.ui.views.DailyRunView
+import com.eltonkola.shnet.ui.views.DrinkView
+import com.eltonkola.shnet.ui.views.SeparatorText
+import com.eltonkola.shnet.ui.views.WorkoutSepView
 
 val unselectedBackgroundColor = Color.DarkGray
 val selectedBackgroundColor = Color.Yellow
